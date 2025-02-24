@@ -1,19 +1,17 @@
 package se.elie.homegame;
 
 import se.elie.homegame.model.Burglar;
-import se.elie.homegame.model.Entity;
 import se.elie.homegame.model.Resident;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-    private Resident resident;
-    private Burglar burglar;
+    private final Resident resident;
+    private final Burglar burglar;
     private boolean fryingPanFound = false;
     private boolean running = true;
 
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public Game() {
         resident = new Resident();
