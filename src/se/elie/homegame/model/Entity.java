@@ -1,40 +1,44 @@
 package se.elie.homegame.model;
 
-public abstract class Entity{
-    private String rol;
+public abstract class Entity {
+    private String role;
     private int health;
-    private int damge;
+    private int damage;
 
-
-    public Entity(String rol, int damge, int health) {
-        this.rol = rol;
-        this.damge = damge;
+    public Entity(String role, int health, int damage) {
+        this.role = role;
         this.health = health;
+        this.damage = damage;
     }
 
 
-    public String getRol() {
-        return rol;
+    public String getRole() {
+        return role;
     }
 
-    public int getDamge() {
-        return damge;
+    public int getDamage() {
+        return damage;
     }
 
     public int getHealth() {
         return health;
     }
 
-protected void takeDamage(int damage) {
-        health -= damage;
 
-}
-public boolean isConscious(){
-        return health <= 0;
-}
-public void addDamage(int damage) {
-        health += damage;
-}
+    public void takeHit(int damage) {
+        health -= damage;
+    }
+
+
+    public boolean isConscious() {
+        return health > 0;
+    }
+
+
+    public void addDamage(int additionalDamage) {
+        this.damage += additionalDamage;
+    }
+
 
 
 }
